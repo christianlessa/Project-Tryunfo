@@ -1,5 +1,4 @@
-import { number } from "prop-types";
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class Form extends Component {
   render() {
