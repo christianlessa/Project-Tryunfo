@@ -21,59 +21,73 @@ export default class Form extends Component {
     return (
       <form className="form">
         <label htmlFor="name-input">
+          Nome:
           <input
             type="text"
             value={ cardName }
             onChange={ onInputChange }
             data-testid="name-input"
+            name="cardName"
           />
         </label>
         <label htmlFor="description-input">
+          Texto:
           <textarea
             value={ cardDescription }
             onChange={ onInputChange }
             data-testid="description-input"
+            name="cardDescription"
           >
             Digite aqui
           </textarea>
         </label>
         <label htmlFor="attr1-input">
+          Número:
           <input
             value={ cardAttr1 }
             onChange={ onInputChange }
             type="number"
             data-testid="attr1-input"
+            name="cardAttr1"
           />
         </label>
         <label htmlFor="attr2-input">
+          Número:
           <input
             value={ cardAttr2 }
             onChange={ onInputChange }
             type="number"
             data-testid="attr2-input"
+            name="cardAttr2"
           />
         </label>
         <label htmlFor="attr3-input">
+          Número:
           <input
             value={ cardAttr3 }
             onChange={ onInputChange }
             type="number"
             data-testid="attr3-input"
+            name="cardAttr3"
           />
         </label>
         <label htmlFor="image-input">
+          Imagem
           <input
             value={ cardImage }
             onChange={ onInputChange }
             type="text"
             data-testid="image-input"
+            name="cardImage"
           />
         </label>
         <label htmlFor="rare-input">
+          Raridade:
           <select
             value={ cardRare }
             onChange={ onInputChange }
             data-testid="rare-input"
+            name="cardRare"
           >
             <option>normal</option>
             <option>raro</option>
@@ -81,21 +95,24 @@ export default class Form extends Component {
           </select>
         </label>
         <label htmlFor="trunfo-input">
+          Super-Trunfo
           <input
             checked={ cardTrunfo }
             onChange={ onInputChange }
             type="checkbox"
             data-testid="trunfo-input"
+            name="cardTrunfo"
           />
         </label>
-        <label htmlFor="save-button">
-          <input
-            disabled={ isSaveButtonDisabled }
-            onClick={ onSaveButtonClick }
-            type="button"
-            data-testid="save-button"
-          />
-        </label>
+        <button
+          type="submit"
+          data-testid="save-button"
+          name="isSaveButtonDisabled"
+          disabled={ isSaveButtonDisabled }
+          onClick={ onSaveButtonClick }
+        >
+          Salvar
+        </button>
       </form>
     );
   }
