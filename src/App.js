@@ -16,11 +16,14 @@ export default class App extends React.Component {
       cardImage: '',
       cardRare: '',
       cardTrunfo: false,
-      hasTrunfo: false,
+      // hasTrunfo: false,
       isSaveButtonDisabled: true,
+      card: [],
     };
 
     this.onInputChange = this.onInputChange.bind(this);
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+    this.addNewCard = this.addNewCard.bind(this);
   }
 
   onInputChange({ target }) {
@@ -51,7 +54,49 @@ export default class App extends React.Component {
     });
   }
 
-  onSaveButtonClick() { }
+  onSaveButtonClick(event) {
+    event.preventDefault();
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+    } = this.state;
+
+    this.setState({
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardDescription: '',
+      cardImage: '',
+      cardName: '',
+      cardRare: 'normal',
+      cardTrunfo: false,
+      hasTrunfo: cardTrunfo,
+      isSaveButtonDisabled: true,
+    });
+
+    this.addNewCard(
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+    );
+  }
+
+  addNewCard(cards) {
+    this.setState((prevState) => ({
+      card: [...prevState.card, cards],
+    }));
+  }
 
   render() {
     const {

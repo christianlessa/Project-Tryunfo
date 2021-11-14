@@ -19,7 +19,7 @@ export default class Form extends Component {
     } = this.props;
 
     return (
-      <form className="form">
+      <form className="form" onSubmit={ onSaveButtonClick }>
         <label htmlFor="name-input">
           Nome:
           <input
