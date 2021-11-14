@@ -31,7 +31,7 @@ export default class Form extends Component {
           />
         </label>
         <label htmlFor="description-input">
-          Texto:
+          Descrição:
           <textarea
             value={ cardDescription }
             onChange={ onInputChange }
@@ -42,31 +42,37 @@ export default class Form extends Component {
           </textarea>
         </label>
         <label htmlFor="attr1-input">
-          Número:
+          Attr01
           <input
             value={ cardAttr1 }
             onChange={ onInputChange }
             type="number"
+            min="1"
+            max="90"
             data-testid="attr1-input"
             name="cardAttr1"
           />
         </label>
         <label htmlFor="attr2-input">
-          Número:
+          Attr02
           <input
             value={ cardAttr2 }
             onChange={ onInputChange }
             type="number"
+            min="1"
+            max="90"
             data-testid="attr2-input"
             name="cardAttr2"
           />
         </label>
         <label htmlFor="attr3-input">
-          Número:
+          Attr03
           <input
             value={ cardAttr3 }
             onChange={ onInputChange }
             type="number"
+            min="1"
+            max="90"
             data-testid="attr3-input"
             name="cardAttr3"
           />
@@ -95,7 +101,7 @@ export default class Form extends Component {
           </select>
         </label>
         <label htmlFor="trunfo-input">
-          Super-Trunfo
+          Super Trunfo
           <input
             checked={ cardTrunfo }
             onChange={ onInputChange }
