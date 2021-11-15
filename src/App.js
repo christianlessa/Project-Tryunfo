@@ -140,6 +140,7 @@ export default class App extends React.Component {
           onInputChange={ onInputChange }
           onSaveButtonClick={ onSaveButtonClick }
         />
+        <Card { ...states } />
         {card.map((cards) => (
           <Card key={ cards.cardName } { ...cards } />
         ))}
@@ -150,4 +151,4 @@ export default class App extends React.Component {
 
 // Requisito 4 feito com ajuda de Denilson Santuchi e Leandro Bastos.
 // Requisito 6, 7 e 8 feito com ajuda de Pedro Lima.
-// Requisito 8 feito com ajuda de Laura Fumagalli e Priscila Silva.
+// Requisito 8 feito com ajuda de Laura Fumagalli, João Victor e Priscila Silva.
