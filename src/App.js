@@ -16,7 +16,7 @@ export default class App extends React.Component {
       cardImage: '',
       cardRare: '',
       cardTrunfo: false,
-      // hasTrunfo: false,
+      hasTrunfo: false,
       isSaveButtonDisabled: true,
       card: [],
     };
@@ -65,6 +65,7 @@ export default class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      hasTrunfo,
     } = this.state;
 
     this.setState({
@@ -80,7 +81,7 @@ export default class App extends React.Component {
       isSaveButtonDisabled: true,
     });
 
-    this.addNewCard(
+    this.addNewCard({
       cardName,
       cardDescription,
       cardAttr1,
@@ -89,7 +90,8 @@ export default class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-    );
+      hasTrunfo,
+    });
   }
 
   addNewCard(cards) {
@@ -144,3 +146,4 @@ export default class App extends React.Component {
 }
 
 // Requisito 4 feito com ajuda de Denilson Santuchi e Leandro Bastos.
+// Requisito 6, 7 e 8 feito com ajuda de Pedro Lima e Leandro Bastos.
