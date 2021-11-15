@@ -103,6 +103,7 @@ export default class App extends React.Component {
   render() {
     const {
       state: {
+        card,
         cardName,
         cardDescription,
         cardAttr1,
@@ -139,11 +140,14 @@ export default class App extends React.Component {
           onInputChange={ onInputChange }
           onSaveButtonClick={ onSaveButtonClick }
         />
-        <Card { ...states } />
+        {card.map((cards) => (
+          <Card key={ cards.cardName } { ...cards } />
+        ))}
       </div>
     );
   }
 }
 
 // Requisito 4 feito com ajuda de Denilson Santuchi e Leandro Bastos.
-// Requisito 6, 7 e 8 feito com ajuda de Pedro Lima e Leandro Bastos.
+// Requisito 6, 7 e 8 feito com ajuda de Pedro Lima.
+// Requisito 8 feito com ajuda de Laura Fumagalli e Priscila Silva.
